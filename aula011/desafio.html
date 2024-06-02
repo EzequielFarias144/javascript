@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body {
+            background-color: rgb(74, 207, 214);
+            color: rgb(42, 0, 110);
+        }
+
+        h1 {
+            color: rgb(174, 20, 212);
+        }
+
+        input.botao {
+            background-color: aqua;
+            border-radius: 50px;
+            margin: 10px 150px;
+            padding: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: A;
+        }
+
+        script {
+            color: darkblue;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Qual a sua Nacionalidade?</h1>
+    Nacionalidade: <input type="text" name="pais" id="pais"><br>
+    <input type="button" value="Verificar" onclick="nacional()" class="botao">
+    <div id="res">
+
+    </div>
+    <script>
+        function nacional() {
+            var txtpais = window.document.getElementById('pais')
+            var res = window.document.getElementById('res')
+            res.innerHTML = `<p>Você mora no país: <strong>${txtpais.value}</strong></p>`
+            if (txtpais.value == 'Brasil') {
+                res.innerHTML += `<p>Voce é <strong>brasileiro</strong></p>`
+            } else {
+                res.innerHTML += `Voce é estrangeiro`
+            }
+        }
+    </script>
+</body>
+</html>
