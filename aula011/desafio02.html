@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio02</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: aquamarine;
+            color: cornflowerblue;
+        }
+
+        main {
+            text-align: center;
+            text-transform: capitalize;
+            
+        }
+
+        input {
+            font-size: 1.5em;
+            border-radius: 10px;
+            margin: auto;
+        }
+
+        input#combinar {
+            border-radius: 10px;
+            margin: 15px;
+            background-color: chartreuse;
+            
+        } 
+
+        div#res {
+
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>combinacao</h1>
+            <p>Seu primeiro nome:</p> <input type="text" name="nome" id="nome"><br><br>
+            <p>Seu segundo nome:</p> <input type="text" name="segName" id="segName"><br><br>
+            <p>Seu E-mail:</p> <input type="email" name="email" id="email"><br>
+            <input type="button" value="combinar" onclick="combinar()" id="combinar">
+            <div id="res">
+        
+            </div>
+    </main>
+    <script>
+        function combinar() {
+            var txtnome = window.document.getElementById('nome').value;
+            var txtsegname = window.document.getElementById('segName').value;
+            var txtemail = window.document.getElementById('email').value;
+            var res = window.document.getElementById('res');
+            var nomeCompleto = txtnome + ' ' + txtsegname;
+            var email = txtemail
+            res.innerHTML = `Seu nome completo é: ${nomeCompleto}`;
+            res.innerHTML += ` seu email é: ${email}`
+        }
+    </script>
+</body>
+</html>

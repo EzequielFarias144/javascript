@@ -8,6 +8,18 @@
         body {
             background-color: rgb(74, 207, 214);
             color: rgb(42, 0, 110);
+            text-align: center;
+        }
+
+        main {
+            background-color: white;
+            border-radius: 10px;
+            margin: 120px 150px 10px 150px;
+            padding-bottom: 10px;
+        }
+
+        main:hover {
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.573);
         }
 
         h1 {
@@ -17,11 +29,15 @@
         input.botao {
             background-color: aqua;
             border-radius: 50px;
-            margin: 10px 150px;
+            margin: 25px 189px;
             padding: 5px;
             font-size: 20px;
-            font-weight: bold;
-            font-family: A;
+            font-weight: 600;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input.botao:hover {
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.479);
         }
 
         script {
@@ -31,12 +47,14 @@
     </style>
 </head>
 <body>
+    <main>
     <h1>Qual a sua Nacionalidade?</h1>
-    Nacionalidade: <input type="text" name="pais" id="pais"><br>
+    País em que você mora: <input type="text" name="pais" id="pais"><br>
     <input type="button" value="Verificar" onclick="nacional()" class="botao">
     <div id="res">
 
     </div>
+    <main>
     <script>
         function nacional() {
             var txtpais = window.document.getElementById('pais')
