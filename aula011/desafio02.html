@@ -13,7 +13,7 @@
 
         main {
             text-align: center;
-            text-transform: capitalize;
+            text-transform:;
             
         }
 
@@ -49,13 +49,13 @@
     </main>
     <script>
         function combinar() {
-            var txtnome = window.document.getElementById('nome').value;
-            var txtsegname = window.document.getElementById('segName').value;
-            var txtemail = window.document.getElementById('email').value;
-            var res = window.document.getElementById('res');
-            var nomeCompleto = txtnome + ' ' + txtsegname;
-            var email = txtemail
-            res.innerHTML = `Seu nome completo é: ${nomeCompleto}`;
+            const txtnome = window.document.getElementById('nome').value;
+            const txtsegname = window.document.getElementById('segName').value;
+            const txtemail = window.document.getElementById('email').value;
+            const res = window.document.getElementById('res');
+            const nomeCompleto = txtnome + ' ' + txtsegname;
+            const email = txtemail
+            res.innerHTML = `Seu nome completo é: ${nomeCompleto}<br>`;
             res.innerHTML += ` seu email é: ${email}`
         }
     </script>
