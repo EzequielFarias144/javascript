@@ -13,8 +13,6 @@
 
         main {
             text-align: center;
-            text-transform:;
-            
         }
 
         input {
@@ -24,10 +22,9 @@
         }
 
         input#combinar {
-            border-radius: 10px;
+            border-radius: 100px;
             margin: 15px;
             background-color: chartreuse;
-            
         } 
 
         div#res {
@@ -56,7 +53,8 @@
             const nomeCompleto = txtnome + ' ' + txtsegname;
             const email = txtemail
             res.innerHTML = `Seu nome completo é: ${nomeCompleto}<br>`;
-            res.innerHTML += ` seu email é: ${email}`
+            res.innerHTML += ` seu email é: ${email}<br>`
+            res.innerHTML += `Correto?`
         }
     </script>
 </body>
