@@ -1,0 +1,80 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.header {
+  padding: 20px;
+  background: #333;
+  color: white;
+  text-align: center;
+}
+
+.features {
+  margin: 20px 0;
+  padding: 20px;
+  background: white;
+  border-radius: 5px;
+}
+
+.features h2 {
+  text-align: center;
+}
+
+.feature {
+  margin: 20px 0;
+}
+
+.testimonials {
+  margin: 20px 0;
+  padding: 20px;
+  background: white;
+  border-radius: 5px;
+}
+
+.testimonials h2 {
+  text-align: center;
+}
+
+footer {
+  padding: 20px;
+  background: #333;
+  color: white;
+  text-align: center;
+}
+
+footer nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+footer nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.signup-button {
+  background: #ff6200;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.signup-button:hover {
+  background: #e55b00;
+}
