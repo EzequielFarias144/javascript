@@ -6,7 +6,7 @@ function App() {
     <div className="container">
       <header className="header">
         <h1>Welcome to the Ultimate Internet Guide!</h1>
-        <p>Explore the vast world of the Internet with our comprehensive guide.</p>
+        <p>Explore the vast world of the Internet with our comprehensive guid.</p>
       </header>
       
       <section className="features">
