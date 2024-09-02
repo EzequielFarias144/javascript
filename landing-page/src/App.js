@@ -5,47 +5,47 @@ function App() {
   return (
     <div className="container">
       <header className="header">
-        <h1>Welcome to the Ultimate Internet Guide!</h1>
-        <p>Explore the vast world of the Internet with our comprehensive guid.</p>
+        <h1>Bem-vindo ao Guia Definitivo da Internet!</h1>
+        <p>Explore o vasto mundo da Internet com nosso guia abrangente.</p>
       </header>
       
       <section className="features">
-        <h2>Key Features of the Internet Guide</h2>
+        <h2>Principais recursos do Guia da Internet</h2>
         <div className="feature">
-          <h3>Beginner's Corner</h3>
-          <p>Understand the basics of the Internet, stay safe online, and get introduced to social media platforms.</p>
+          <h3>Cantinho do Iniciante</h3>
+          <p>Entenda os fundamentos da Internet, mantenha-se seguro online e seja apresentado às plataformas de mídia social.</p>
         </div>
         <div className="feature">
-          <h3>Advanced Tutorials</h3>
-          <p>Deep dive into cybersecurity, explore advanced programming concepts, and master digital marketing.</p>
+          <h3>Tutoriais avançados</h3>
+          <p>Mergulhe profundamente na segurança cibernética, explore conceitos avançados de programação e domine o marketing digital.</p>
         </div>
         <div className="feature">
-          <h3>Tools and Resources</h3>
-          <p>Access top-rated online tools, educational resources, and join interactive forums for community support.</p>
+          <h3>Ferramentas e recursos</h3>
+          <p>Acesse as melhores ferramentas online, recursos educacionais e participe de fóruns interativos para obter suporte da comunidade.</p>
         </div>
       </section>
       
       <section className="testimonials">
-        <h2>What Our Users Are Saying</h2>
+        <h2>O que nossos usuários estão dizendo</h2>
         <blockquote>
-          <p>"The Ultimate Internet Guide has been a game-changer for my online business. The advanced tutorials on digital marketing helped me triple my revenue!"</p>
+          <p>"O Ultimate Internet Guide foi um divisor de águas para o meu negócio online. Os tutoriais avançados sobre marketing digital me ajudaram a triplicar minha receita!"</p>
           <footer>— Jane D.</footer>
         </blockquote>
         <blockquote>
-          <p>"As a newbie to the online world, the Beginner's Corner was exactly what I needed. The guides are easy to understand and super helpful."</p>
+          <p>"Como um novato no mundo online, o Beginner's Corner era exatamente o que eu precisava. Os guias são fáceis de entender e super prestativos."</p>
           <footer>— John S.</footer>
         </blockquote>
-        <p>Join our community and share your experiences, ask questions, and grow together in our interactive forums.</p>
+        <p>Junte-se à nossa comunidade e compartilhe suas experiências, faça perguntas e cresça juntos em nossos fóruns interativos.</p>
       </section>
       
       <footer className="footer">
-        <button className="signup-button">Sign Up Now and Start Your Journey!</button>
+        <button className="signup-button">Inscreva-se agora e comece sua jornada!</button>
         <nav>
           <ul>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Follow Us on Social Media</a></li>
+            <li><a href="#">Contate-nos</a></li>
+            <li><a href="#">Política de privacidade</a></li>
+            <li><a href="#">Termos de Serviço</a></li>
+            <li><a href="#">Siga-nos nas redes sociais</a></li>
           </ul>
         </nav>
       </footer>
