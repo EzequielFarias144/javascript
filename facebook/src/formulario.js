@@ -5,6 +5,7 @@ const Form = (props) => {
             <input type="password"></input>
             <button>Entrar</button> 
             <a href="#">Esqueceu a senha?</a>
+            <button>Criar nova conta</button>
         </div>
     );
 };

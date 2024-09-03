@@ -4,7 +4,10 @@ import Form from './formulario';
 function App(props) {
   return (
     <div className="App">
-     <h1>Facebook</h1>
+     <header>
+       <h1>Facebook</h1>
+       <p>O Facebook ajuda você a se conectar e compartilhar com as pessoas que fazem parte da sua vida.</p>
+     </header>
      <Form></Form>
     </div>
   );

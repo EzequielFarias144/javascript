@@ -1,1 +1,31 @@
+@charset "UTF-8";
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f7;
+}
+
+header {
+  text-align: center;
+}
+
+.form {
+  
+}
+
+h1 {
+  color: #0866FF;
+}
+
+p {
+  font-family: Helvetica;
+  font-size: medium;
+}
+
+input, button, a {
+  display: flex;
+  margin-left: 40%;
+}
 
