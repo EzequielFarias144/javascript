@@ -3,9 +3,9 @@ const Form = (props) => {
         <div className="form">
             <input type="email" placeholder="Email ou telefone"></input>
             <input type="password"></input>
-            <button>Entrar</button> 
+            <button className="entrar">Entrar</button> 
             <a href="#">Esqueceu a senha?</a>
-            <button>Criar nova conta</button>
+            <button className="conta">Criar nova conta</button>
         </div>
     );
 };
