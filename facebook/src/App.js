@@ -10,6 +10,9 @@ function App(props) {
      </header>
      
      <Form></Form>
+      <footer>
+  
+    </footer>
     </div>
   );
 }
