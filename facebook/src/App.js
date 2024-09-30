@@ -1,68 +1,78 @@
 import "./App.css"
-import Form from './formulario';
+import Login from "./formulario";
 
 function App(props) {
   return (
     <div className="App">
-      <div className="bg-blue-500 text-white p-4">
-      <h1 className="text-3xl font-bold">Olá, Tailwind CSS!</h1>
-      <p>Este é um exemplo simples de como usar Tailwind no React.</p>
-    </div>
-
-     <header>
-       <img src="./face-foto.svg" alt="facebook" />
-       <p>O Facebook ajuda você a se conectar e compartilhar com as pessoas que fazem parte da sua vida.</p>
-     </header>
+     <div className="text-center mb-[-100px]">
+          <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="Facebook" className="w-80 mx-auto" />
+          <div className=" mt-[-11px] px-16 text-wrap">
+            <p className="text-2xl">O Facebook ajuda você a se conectar e compartilhar com as pessoas que fazem parte da sua vida.</p>
+          </div>
+        </div>
      
-     <Form></Form>
-        <footer>
-        <ul>
-          <li>Português (Brasil)</li>
-          <li>English (US)</li>
-          <li>Español</li>
-          <li>Français (France)</li>
-          <li>Italiano</li>
-          <li>Deutsch</li>
-          <li>العربية</li>
-          <li>हिन्दी</li>
-          <li>中文(简体)</li>
-          <li>日本語</li>
-          <li>Cadastre-se</li>
-          <li>Entrar</li>
-          <li>Messenger</li>
-          <li>Facebook Lite</li>
-          <li>Vídeo</li>
-          <li>Locais</li>
-          <li>Jogos</li>
-          <li>Marketplace</li>
-          <li>Meta Pay</li>
-          <li>Meta Store</li>
-          <li>Meta Quest</li>
-          <li>Ray-Ban Meta</li>
-          <li>Meta AI</li>
-          <li>Instagram</li>
-          <li>Threads</li>
-          <li>Campanhas de arrecadação de fundos</li>
-          <li>Serviços</li>
-          <li>Central de Informações de Votação</li>
-          <li>Política de Privacidade</li>
-          <li>Central de Privacidade</li>
-          <li>Grupos</li>
-          <li>Sobre</li>
-          <li>Criar anúncio</li>
-          <li>Criar Página</li>
-          <li>Desenvolvedores</li>
-          <li>Carreiras</li>
-          <li>Cookies</li>
-          <li>Escolhas para anúncios</li>
-          <li>Termos</li>
-          <li>Ajuda</li>
-          <li>Carregamento de contatos e não usuários</li>
-          <li>Configurações</li>
-          <li>Registro de atividades</li>
-        </ul>
-        <p>Meta  2024</p>
-      </footer>
+     <Login></Login>
+        <div className="bg-white mt-[-98px]">
+          <div className="pt-[20px]">
+            <div className="mx-[40px]">
+              <ul className="text-xs flex flex-wrap items-center text-slate-400 pt-4 text-wrap">
+                <li>Português (Brasil)</li>
+                <li className="pl-[10px]">English (US)</li>
+                <li className="pl-[10px]">Español</li>
+                <li className="pl-[10px]">Français (France)</li>
+                <li className="pl-[10px]">Italiano</li>
+                <li className="pl-[10px]">Deutsch</li>
+                <li className="pl-[10px]">العربية</li>
+                <li className="pl-[10px]">हिन्दी</li>
+                <li className="pl-[10px]">中文(简体)</li>
+                <li className="pl-[10px]">日本語</li>
+              </ul>
+              <div className="border-b-[1px] mb-4 h-4"></div>
+              <div>
+                <ul className="text-xs flex flex-wrap items-center text-slate-400 pt-4 text-wrap ml-[-20px] ">
+                  <li className="pr-0 pl-[20px] linha">Cadastre-se</li>
+                  <li className="pr-0 pl-[20px] linha">Entrar</li>
+                  <li className="pr-0 pl-[20px] linha">Messenger</li>
+                  <li className="pr-0 pl-[20px] linha">Facebook Lite</li>
+                  <li className="pr-0 pl-[20px] linha">Vídeo</li>
+                  <li className="pr-0 pl-[20px] linha">Locais</li>
+                  <li className="pr-0 pl-[20px] linha">Jogos</li>
+                  <li className="pr-0 pl-[20px] linha">Marketplace</li>
+                  <li className="pr-0 pl-[20px] linha">Meta Pay</li>
+                  <li className="pr-0 pl-[20px] linha">Meta Store</li>
+                  <li className="pr-0 pl-[20px] linha">Meta Quest</li>
+                  <li className="pr-0 pl-[20px] linha">Ray-Ban Meta</li>
+                  <li className="pr-0 pl-[20px] linha">Meta AI</li>
+                  <li className="pr-0 pl-[20px] linha">Instagram</li>
+                  <li className="pr-0 pl-[20px] linha">Threads</li>
+                  <li className="pr-0 pl-[20px] linha">Campanhas de arrecadação de fundos</li>
+                  <li className="pr-0 pl-[20px] linha">Serviços</li>
+                  <li className="pr-0 pl-[20px] linha">Central de Informações de Votação</li>
+                  <li className="pr-0 pl-[20px] linha">Política de Privacidade</li>
+                  <li className="pr-0 pl-[20px] linha">Central de Privacidade</li>
+                  <li className="pr-0 pl-[20px] linha">Grupos</li>
+                  <li className="pr-0 pl-[20px] linha">Sobre</li>
+                  <li className="pr-0 pl-[20px] linha">Criar anúncio</li>
+                  <li className="pr-0 pl-[20px] linha">Criar Página</li>
+                  <li className="pr-0 pl-[20px] linha">Desenvolvedores</li>
+                  <li className="pr-0 pl-[20px] linha">Carreiras</li>
+                  <li className="pr-0 pl-[20px] linha">Cookies</li>
+                  <li className="pr-0 pl-[20px] linha">Escolhas para anúncios</li>
+                  <li className="pr-0 pl-[20px] linha">Termos</li>
+                  <li className="pr-0 pl-[20px] linha">Ajuda</li>
+                  <li className="pr-0 pl-[20px] linha">Carregamento de contatos e não usuários</li>
+                  <li className="pr-0 pl-[20px] linha">Configurações</li>
+                  <li className="pr-0 pl-[20px] linha">Registro de atividades</li>
+                </ul>
+              </div>
+              <div className="mt-5 mb-5 text-xs text-slate-400">
+                <div>
+                  <span>Meta © 2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
   );
 }

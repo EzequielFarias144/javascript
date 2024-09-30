@@ -1,6 +1,7 @@
 @charset "UTF-8";
-
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
   font-family: Arial, sans-serif;
@@ -9,50 +10,6 @@ body {
   background-color: #f4f4f7;
 }
 
-header {
-  text-align: center;
-}
-
-.form {
-  background-color: white;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px rgba(136, 109, 93, 0.616);
-    width: 400px;
-    padding: 10px;
-    margin: auto;
-  
-}
-
-h1 {
-  color: #0866FF;
-}
-
-p {
-  font-family: Helvetica;
-  font-size: medium;
-}
-
-input, button, a {
-  display: flex;
-  margin-left: 40%;
-}
-
-.entrar {
-  font-family: Helvetica;
-  font-weight: bold;
-  font-size: large;
-  background-color: #1877F2;
-  color: white;
-  border: none;
-  padding: 15px 200px 15px 20px;
-  border-radius: 10px;
-}
-
-.conta {
-  background-color: #36A420;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  margin-top: 10px;
-  margin-left: 50%;
+.linha {
+  line-height: 1.6;
 }
