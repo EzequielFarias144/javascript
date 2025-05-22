@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterar Texto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        #texto {
+            font-size: 20px;
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            min-height: 30px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Alterador de Texto</h1>
+    
+    <div id="texto">Texto original que será alterado.</div>
+    
+    <button id="botaoAlterar">Alterar Texto</button>
+    
+    <script>
+        const botao = document.getElementById('botaoAlterar');
+        const elementoTexto = document.getElementById('texto');
+        
+        botao.addEventListener('click', function() {
+            elementoTexto.textContent = 'O texto foi alterado com sucesso!';
+        });
+    </script>
+</body>
+</html>

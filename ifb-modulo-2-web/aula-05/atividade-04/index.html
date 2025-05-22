@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seletor de Texto</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        #texto {
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            margin: 20px 0;
+            min-height: 50px;
+        }
+        
+        .radio-group {
+            margin: 15px 0;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Seletor de Texto</h1>
+    
+    <div id="texto">Selecione uma opção e clique no botão para alterar este texto.</div>
+    
+    <div class="radio-group">
+        <input type="radio" id="opcao1" name="opcoes" value="opcao1" checked>
+        <label for="opcao1">Opção 1</label><br>
+        
+        <input type="radio" id="opcao2" name="opcoes" value="opcao2">
+        <label for="opcao2">Opção 2</label>
+    </div>
+    
+    <button id="alterarTexto">Alterar Texto</button>
+    
+    <script>
+        $(document).ready(function() {
+            const textos = {
+                'opcao1': 'Você selecionou a Opção 1! Este é o texto correspondente à primeira escolha.',
+                'opcao2': 'A Opção 2 foi selecionada! Este conteúdo é exibido quando o segundo radio button está marcado.'
+            };
+
+            $('#alterarTexto').click(function() {
+                const opcaoSelecionada = $('input[name="opcoes"]:checked').val();
+
+                $('#texto').text(textos[opcaoSelecionada]);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterar Parágrafos</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        p {
+            padding: 8px;
+            border-left: 3px solid #ddd;
+            margin: 10px 0;
+        }
+        
+        .importante {
+            background-color: #fff8e1;
+            border-left: 3px solid #ffc107;
+            font-weight: bold;
+        }
+        
+        button {
+            padding: 8px 16px;
+            margin: 5px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #0b7dda;
+        }
+    </style>
+</head>
+<body>
+    <h1>Alterador de Parágrafos</h1>
+    
+    <p>Este é um parágrafo comum.</p>
+    <p class="importante">Este parágrafo é importante!</p>
+    <p>Outro parágrafo normal aqui.</p>
+    <p class="importante">Este também é importante.</p>
+    <p>Último parágrafo sem classe especial.</p>
+    
+    <div>
+        <button id="alterarTodos">Alterar Todos os Parágrafos</button>
+        <button id="alterarImportantes">Alterar Apenas Importantes</button>
+    </div>
+    
+    <script>
+        $('#alterarTodos').click(function() {
+            $('p').text('Texto alterado para todos os parágrafos.');
+        });
+        
+        $('#alterarImportantes').click(function() {
+            $('p.importante').text('Texto alterado apenas para parágrafos importantes.');
+        });
+    </script>
+</body>
+</html>

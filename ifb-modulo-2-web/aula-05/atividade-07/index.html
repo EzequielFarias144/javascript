@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parágrafos Interativos</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        p {
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        p:hover {
+            background-color: #e0e0e0;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Parágrafos Interativos</h1>
+    
+    <p>Clique em qualquer parágrafo para fazê-lo desaparecer.</p>
+    <p>Este é o segundo parágrafo. Clique em mim e eu vou sumir!</p>
+    <p>Mais um parágrafo para você testar o efeito.</p>
+    <p>Parágrafo com conteúdo diferente dos outros.</p>
+    <p>Último parágrafo da lista. Todos podem desaparecer com um clique.</p>
+    
+    <button id="mostrarTudo">Mostrar Todos os Parágrafos</button>
+    
+    <script>
+        $(document).ready(function() {
+            // Faz cada parágrafo desaparecer quando clicado
+            $('p').click(function() {
+                $(this).hide(); // ou .fadeOut() para um efeito mais suave
+            });
+            
+            // Mostra todos os parágrafos quando o botão é clicado
+            $('#mostrarTudo').click(function() {
+                $('p').show(); // ou .fadeIn() para um efeito mais suave
+            });
+        });
+    </script>
+</body>
+</html>

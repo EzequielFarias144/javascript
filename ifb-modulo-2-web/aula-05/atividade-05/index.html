@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto que muda de cor</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .texto-jquery {
+            font-size: 24px;
+            color: #333;
+            transition: color 0.3s ease;
+            cursor: default;
+        }
+    </style>
+</head>
+<body>
+    <p class="texto-jquery">Passe o mouse sobre mim para mudar minha cor!</p>
+
+    <script>
+        $(document).ready(function() {
+            $('.texto-jquery')
+                .mouseenter(function() {
+                    $(this).css('color', '#8BC34A');
+                })
+                .mouseleave(function() {
+                    $(this).css('color', '#333');
+                });
+        });
+    </script>
+</body>
+</html>

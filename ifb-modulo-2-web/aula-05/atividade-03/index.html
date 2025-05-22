@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efeito Mouse Over</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        #elemento-interativo {
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        #elemento-interativo:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div id="elemento-interativo">Passe o mouse sobre mim</div>
+
+    <script>
+        $(document).ready(function() {
+            const textoOriginal = $('#elemento-interativo').text();
+            const textoAlternativo = "Mouse está sobre mim!";
+
+            $('#elemento-interativo').mouseenter(function() {
+                $(this).text(textoAlternativo);
+            });
+
+            $('#elemento-interativo').mouseleave(function() {
+                $(this).text(textoOriginal);
+            });
+        });
+    </script>
+</body>
+</html>

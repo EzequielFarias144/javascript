@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parágrafos com Efeitos</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        p.interativo {
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        
+        p.interativo:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .controles {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        label {
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        
+        input[type="radio"] {
+            margin-right: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Parágrafos com Efeitos</h1>
+    
+    <div class="controles">
+        <h3>Escolha o efeito:</h3>
+        <label>
+            <input type="radio" name="efeito" value="hide" checked> Esconder (hide)
+        </label>
+        <label>
+            <input type="radio" name="efeito" value="fade"> Esmaecer (fade)
+        </label>
+        <label>
+            <input type="radio" name="efeito" value="slide"> Deslizar (slide)
+        </label>
+    </div>
+    
+    <p class="interativo">Clique em qualquer parágrafo para aplicar o efeito selecionado.</p>
+    <p class="interativo">Este é o segundo parágrafo. Experimente diferentes efeitos!</p>
+    <p class="interativo">Mais um parágrafo para você testar os efeitos.</p>
+    <p class="interativo">Cada efeito tem uma animação diferente.</p>
+    <p class="interativo">Último parágrafo da lista. Divirta-se!</p>
+    
+    <button id="mostrarTudo">Mostrar Todos os Parágrafos</button>
+    
+    <script>
+        $(document).ready(function() {
+            // Armazena o efeito selecionado (padrão: hide)
+            let efeitoSelecionado = 'hide';
+            
+            // Atualiza o efeito selecionado quando o usuário muda a opção
+            $('input[name="efeito"]').change(function() {
+                efeitoSelecionado = $(this).val();
+            });
+            
+            // Aplica o efeito selecionado quando um parágrafo é clicado
+            $('p.interativo').click(function() {
+                switch(efeitoSelecionado) {
+                    case 'hide':
+                        $(this).hide();
+                        break;
+                    case 'fade':
+                        $(this).fadeOut();
+                        break;
+                    case 'slide':
+                        $(this).slideUp();
+                        break;
+                }
+            });
+            
+            // Mostra todos os parágrafos quando o botão é clicado
+            $('#mostrarTudo').click(function() {
+                switch(efeitoSelecionado) {
+                    case 'hide':
+                        $('p.interativo').show();
+                        break;
+                    case 'fade':
+                        $('p.interativo').fadeIn();
+                        break;
+                    case 'slide':
+                        $('p.interativo').slideDown();
+                        break;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

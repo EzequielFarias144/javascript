@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicar Destaque</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        /* Classe de destaque que será aplicada */
+        .destaque {
+            font-weight: bold;
+            background-color: #fffde7;
+            color: #ff8f00;
+            padding: 2px 5px;
+            border-radius: 3px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        button {
+            padding: 10px 15px;
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        
+        button:hover {
+            background-color: #1565c0;
+        }
+        
+        .exemplo {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Demonstração de Destaque</h1>
+    
+    <div class="exemplo">
+        <p>Este é um parágrafo com vários <span>elementos span</span> espalhados pelo texto. Quando você clicar no botão abaixo, todos os <span>spans</span> receberão a classe de <span>destaque</span> com formatação especial.</p>
+        
+        <p>Outro parágrafo com <span>mais spans</span> para demonstrar o efeito em <span>diferentes locais</span> do documento.</p>
+    </div>
+    
+    <button id="aplicarDestaque">Aplicar Destaque aos Spans</button>
+    
+    <script>
+        $(document).ready(function() {
+            // Aplica a classe 'destaque' a todos os spans quando o botão é clicado
+            $('#aplicarDestaque').click(function() {
+                $('span').addClass('destaque');
+            });
+        });
+    </script>
+</body>
+</html>
