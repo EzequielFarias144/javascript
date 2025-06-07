@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterar Texto com jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #elemento {
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            width: 200px;
+            margin: 50px auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="elemento">Passe o mouse aqui</div>
+
+    <script>
+        $(document).ready(function() {
+            const textoOriginal = $("#elemento").text();
+            const textoSobre = "Mouse sobre o elemento!";
+
+            $("#elemento").mouseenter(function() {
+                $(this).text(textoSobre);
+            });
+
+            $("#elemento").mouseleave(function() {
+                $(this).text(textoOriginal);
+            });
+        });
+    </script>
+</body>
+</html>

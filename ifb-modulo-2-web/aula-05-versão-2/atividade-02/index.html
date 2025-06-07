@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Mudança de Texto</title>
+    <style>
+        #elemento {
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            width: 200px;
+            margin: 50px auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="elemento">Passe o mouse aqui</div>
+
+    <script>
+        const elemento = document.getElementById('elemento');
+        const textoOriginal = elemento.textContent;
+        const textoSobre = "Mouse sobre o elemento!";
+
+        elemento.addEventListener('mouseover', function() {
+            this.textContent = textoSobre;
+        });
+
+        elemento.addEventListener('mouseout', function() {
+            this.textContent = textoOriginal;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Parágrafos com jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #container {
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 500px;
+        }
+        #botao {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        #botao:hover {
+            background-color: #45a049;
+        }
+        p {
+            padding: 8px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <button id="botao">Adicionar Parágrafo</button>
+        <div id="conteudo"></div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            const textos = [
+                "Este é o primeiro parágrafo.",
+                "Segundo parágrafo adicionado dinamicamente!",
+                "Terceiro parágrafo!",
+                "Texto gerado a partir de um array.",
+                "Último item do array."
+            ];
+            let indice = 0;
+
+            $("#botao").click(function() {
+                if (indice < textos.length) {
+                    $("<p>").text(textos[indice]).appendTo("#conteudo");
+                    indice++;
+                } else {
+                    alert("Todos os textos do array foram usados!");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

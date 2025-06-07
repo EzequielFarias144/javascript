@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Usuário - reqres.in</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            padding: 10px;
+            width: 100px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #d32f2f;
+        }
+        #status {
+            margin: 15px 0;
+            min-height: 20px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+        }
+        .error {
+            background-color: #f2dede;
+            color: #a94442;
+            border: 1px solid #ebccd1;
+        }
+        .info {
+            background-color: #d9edf7;
+            color: #31708f;
+            border: 1px solid #bce8f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Excluir Usuário</h1>
+    
+    <form id="delete-form">
+        <div class="form-group">
+            <label for="user-id">ID do usuário:</label>
+            <input type="number" id="user-id" min="1" required>
+        </div>
+        
+        <button type="submit">Excluir Usuário</button>
+    </form>
+    
+    <div id="status" class="info">Digite o ID do usuário que deseja excluir</div>
+
+    <script>
+        $(document).ready(function() {
+            const API_KEY = "reqres-free-v1";
+            
+            $('#delete-form').submit(function(e) {
+                e.preventDefault();
+                
+                const userId = $('#user-id').val();
+                
+                $('#status').removeClass('success error info')
+                           .addClass('info')
+                           .text('Enviando requisição...');
+                
+                $.ajax({
+                    url: `https://reqres.in/api/users/${userId}`,
+                    method: 'DELETE',
+                    headers: {
+                        'x-api-key': API_KEY
+                    },
+                    statusCode: {
+                        204: function() {
+                            $('#status').removeClass('info error')
+                                       .addClass('success')
+                                       .text(`Usuário com ID ${userId} excluído com sucesso!`);
+                        },
+                        404: function() {
+                            $('#status').removeClass('info success')
+                                       .addClass('error')
+                                       .text('Erro: Usuário não encontrado');
+                        }
+                    },
+                    error: function() {
+                        $('#status').removeClass('info success')
+                                   .addClass('error')
+                                   .text('Erro ao tentar excluir o usuário');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

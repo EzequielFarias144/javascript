@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade AJAX - Numbers API</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            min-height: 50px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            padding: 8px;
+            width: 100px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        #status {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fatos Curiosos sobre Números</h1>
+    
+    <div class="input-group">
+        <label for="numero">Digite um número:</label>
+        <input type="number" id="numero" min="0" value="8">
+    </div>
+    
+    <button id="carregar">Carregar Fato</button>
+    <div id="status"></div>
+    <div id="resultado"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#carregar').click(function() {
+                const numero = $('#numero').val();
+
+                if (numero === '' || isNaN(numero)) {
+                    $('#resultado').text('Por favor, digite um número válido.');
+                    return;
+                }
+
+                $('#status').text('Carregando...');
+                $('#resultado').empty();
+                
+                $.ajax({
+                    url: `http://numbersapi.com/${numero}`,
+                    method: 'GET',
+                    success: function(data) {
+                        $('#resultado').text(data);
+                        $('#status').text('Pronto!');
+
+                        setTimeout(function() {
+                            $('#status').empty();
+                        }, 2000);
+                    },
+                    error: function() {
+                        $('#resultado').text('Erro ao carregar o fato. Tente novamente.');
+                        $('#status').text('Falha!');
+
+                        setTimeout(function() {
+                            $('#status').empty();
+                        }, 2000);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

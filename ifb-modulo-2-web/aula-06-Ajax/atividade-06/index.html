@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Usuário - reqres.in</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #user-container {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: none;
+            background-color: #f9f9f9;
+        }
+        #avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            object-fit: cover;
+            border: 2px solid #4CAF50;
+        }
+        .info {
+            margin: 10px 0;
+            padding: 8px;
+            background-color: white;
+            border-radius: 4px;
+        }
+        label {
+            display: inline-block;
+            width: 120px;
+            font-weight: bold;
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #status {
+            margin: 15px 0;
+            color: #666;
+            font-style: italic;
+            min-height: 20px;
+        }
+        input {
+            padding: 10px;
+            width: 80px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Consulta de Usuário</h1>
+    
+    <div class="input-group">
+        <label for="user-id">ID do usuário (1-12):</label>
+        <input type="number" id="user-id" min="1" max="12" value="1">
+        <button id="btn-buscar">Buscar Usuário</button>
+    </div>
+    
+    <div id="status">Digite um ID e clique em buscar</div>
+    
+    <div id="user-container">
+        <img id="avatar" src="" alt="Foto do usuário" onerror="this.src='https://via.placeholder.com/100'">
+        <div class="info">
+            <label>Email:</label>
+            <span id="user-email"></span>
+        </div>
+        <div class="info">
+            <label>Primeiro nome:</label>
+            <span id="user-first-name"></span>
+        </div>
+        <div class="info">
+            <label>Último nome:</label>
+            <span id="user-last-name"></span>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            const API_KEY = "reqres-free-v1";
+            
+            $('#btn-buscar').click(function() {
+                const userId = $('#user-id').val();
+                
+                if(userId < 1 || userId > 12) {
+                    $('#status').html('<span style="color:red">Por favor, insira um ID entre 1 e 12</span>');
+                    $('#user-container').hide();
+                    return;
+                }
+                
+                $('#status').html('<span style="color:blue">Carregando dados do usuário...</span>');
+                $('#user-container').hide();
+
+                $.ajax({
+                    url: `https://reqres.in/api/users/${userId}`,
+                    method: 'GET',
+                    headers: {
+                        'x-api-key': API_KEY  
+                    },
+                    success: function(response) {
+                        if(response.data) {
+                            const user = response.data;
+
+                            $('#avatar').attr('src', user.avatar);
+
+                            $('#user-email').text(user.email);
+                            $('#user-first-name').text(user.first_name);
+                            $('#user-last-name').text(user.last_name);
+                            
+                            $('#user-container').show();
+                            $('#status').html('<span style="color:green">Usuário carregado com sucesso!</span>');
+                            
+                            setTimeout(() => $('#status').text(''), 2000);
+                        }
+                    },
+                    error: function(xhr) {
+                        let errorMsg = 'Erro ao carregar usuário';
+                        if(xhr.status === 404) {
+                            errorMsg = 'Usuário não encontrado';
+                        } else if(xhr.responseJSON && xhr.responseJSON.error) {
+                            errorMsg = xhr.responseJSON.error;
+                        }
+                        $('#status').html(`<span style="color:red">${errorMsg}</span>`);
+                        $('#user-container').hide();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

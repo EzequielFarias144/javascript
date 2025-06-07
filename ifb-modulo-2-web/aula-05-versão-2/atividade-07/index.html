@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parágrafos com Mudança de Cor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        p {
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        p:hover {
+            background-color: #e9e9e9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Clique nos parágrafos para mudar a cor</h1>
+    
+    <p>Este é o primeiro parágrafo. Clique-me!</p>
+    <p>Segundo parágrafo da página. Experimente clicar.</p>
+    <p>Terceiro parágrafo que também muda de cor.</p>
+    <p>Mais um parágrafo para demonstrar o efeito.</p>
+    <p>Último parágrafo da nossa lista interativa.</p>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            const coresDisponiveis = [
+                '#FF5733', '#33FF57', '#3357FF', 
+                '#F033FF', '#FF33A8', '#33FFF5',
+                '#8A2BE2', '#FF8C00', '#228B22'
+            ];
+            
+            $('p').on('click', function() {
+                const corAleatoria = coresDisponiveis[
+                    Math.floor(Math.random() * coresDisponiveis.length)
+                ];
+
+                $(this).css('color', corAleatoria);
+            });
+        });
+    </script>
+</body>
+</html>

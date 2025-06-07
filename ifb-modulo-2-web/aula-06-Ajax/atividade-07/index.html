@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Usuário - reqres.in</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #status {
+            margin: 15px 0;
+            color: #666;
+            font-style: italic;
+            min-height: 20px;
+        }
+        #result-container {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: none;
+            background-color: #f9f9f9;
+        }
+        .result-item {
+            margin: 10px 0;
+            padding: 8px;
+            background-color: white;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Criar Novo Usuário</h1>
+    
+    <form id="user-form">
+        <div class="form-group">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="job">Profissão:</label>
+            <input type="text" id="job" required>
+        </div>
+        
+        <button type="submit">Criar Usuário</button>
+    </form>
+    
+    <div id="status">Preencha os dados e clique em Criar Usuário</div>
+    
+    <div id="result-container">
+        <h2>Usuário Criado com Sucesso</h2>
+        <div class="result-item">
+            <label>ID:</label>
+            <span id="result-id"></span>
+        </div>
+        <div class="result-item">
+            <label>Nome:</label>
+            <span id="result-name"></span>
+        </div>
+        <div class="result-item">
+            <label>Profissão:</label>
+            <span id="result-job"></span>
+        </div>
+        <div class="result-item">
+            <label>Data de Criação:</label>
+            <span id="result-createdAt"></span>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            const API_KEY = "reqres-free-v1";
+            
+            $('#user-form').submit(function(e) {
+                e.preventDefault();
+                
+                const name = $('#name').val();
+                const job = $('#job').val();
+                
+                $('#status').html('<span style="color:blue">Criando usuário...</span>');
+                $('#result-container').hide();
+
+                $.ajax({
+                    url: 'https://reqres.in/api/users',
+                    method: 'POST',
+                    headers: {
+                        'x-api-key': API_KEY
+                    },
+                    data: {
+                        name: name,
+                        job: job
+                    },
+                    success: function(response) {
+                        $('#result-id').text(response.id);
+                        $('#result-name').text(response.name);
+                        $('#result-job').text(response.job);
+                        $('#result-createdAt').text(response.createdAt);
+                        
+                        $('#result-container').show();
+                        $('#status').html('<span style="color:green">Usuário criado com sucesso!</span>');
+                    },
+                    error: function(xhr) {
+                        $('#status').html('<span style="color:red">Erro ao criar usuário. Tente novamente.</span>');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -68,7 +68,7 @@
             <input type="radio" name="efeito" value="hide" checked> Esconder (hide)
         </label>
         <label>
-            <input type="radio" name="efeito" value="fade"> Esmaecer (fade)
+            <input type="radio" name="efeito" value="fade"> Desaparecer (fade)
         </label>
         <label>
             <input type="radio" name="efeito" value="slide"> Deslizar (slide)
@@ -76,24 +76,21 @@
     </div>
     
     <p class="interativo">Clique em qualquer parágrafo para aplicar o efeito selecionado.</p>
-    <p class="interativo">Este é o segundo parágrafo. Experimente diferentes efeitos!</p>
-    <p class="interativo">Mais um parágrafo para você testar os efeitos.</p>
+    <p class="interativo">Este é o segundo parágrafo.</p>
+    <p class="interativo">Mais um parágrafo para testar os efeitos.</p>
     <p class="interativo">Cada efeito tem uma animação diferente.</p>
-    <p class="interativo">Último parágrafo da lista. Divirta-se!</p>
+    <p class="interativo">Último parágrafo da lista.</p>
     
     <button id="mostrarTudo">Mostrar Todos os Parágrafos</button>
     
     <script>
         $(document).ready(function() {
-            // Armazena o efeito selecionado (padrão: hide)
             let efeitoSelecionado = 'hide';
-            
-            // Atualiza o efeito selecionado quando o usuário muda a opção
+
             $('input[name="efeito"]').change(function() {
                 efeitoSelecionado = $(this).val();
             });
-            
-            // Aplica o efeito selecionado quando um parágrafo é clicado
+
             $('p.interativo').click(function() {
                 switch(efeitoSelecionado) {
                     case 'hide':
@@ -107,8 +104,7 @@
                         break;
                 }
             });
-            
-            // Mostra todos os parágrafos quando o botão é clicado
+
             $('#mostrarTudo').click(function() {
                 switch(efeitoSelecionado) {
                     case 'hide':
