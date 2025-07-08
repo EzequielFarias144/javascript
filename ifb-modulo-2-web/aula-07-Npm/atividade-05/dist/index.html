@@ -1,0 +1,21 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Conversor de Texto</title><style>body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .converter {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    textarea, select, button {
+      padding: 8px;
+      font-size: 16px;
+    }
+    #result {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      min-height: 50px;
+    }</style><script defer="defer" src="main.js"></script></head><body><h1>Conversor de Texto</h1><div class="converter"><textarea id="inputText" placeholder="Digite seu texto aqui..." rows="4"></textarea> <select id="conversionType"><option value="space">toSpaceCase (espaços e minúsculas)</option><option value="capital">toCapitalCase (Primeira Letra Maiúscula)</option><option value="constant">toConstantCase (MAIÚSCULAS_COM_UNDERSCORES)</option></select> <button id="convertBtn">Converter</button><div id="result"></div></div></body></html>

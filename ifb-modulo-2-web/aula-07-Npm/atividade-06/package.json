@@ -1,0 +1,33 @@
+{
+  "name": "text-converter-webpack",
+  "version": "1.0.0",
+  "description": "Conversor de texto com Webpack",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development --open",
+    "watch": "webpack --watch --mode development"
+  },
+  "dependencies": {
+    "to-capital-case": "^1.0.0",
+    "to-constant-case": "^1.0.0",
+    "to-space-case": "^1.0.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1",
+    "html-webpack-plugin": "^5.5.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
